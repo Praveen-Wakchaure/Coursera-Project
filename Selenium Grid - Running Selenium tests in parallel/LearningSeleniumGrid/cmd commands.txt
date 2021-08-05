@@ -1,0 +1,13 @@
+java -jar selenium-server-standalone-3.141.59.jar -role hub -port 4455
+
+java -jar selenium-server-standalone-3.141.59.jar -role node -hub  http://172.31.128.129:4455/grid/register/
+
+java -Dwebdriver.chrome.driver="C:\Users\Administrator\Desktop\Selenium Grid Testing\chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -hub  http://172.31.128.129:4455/grid/register/
+
+java -Dwebdriver.edge.driver="C:\Users\Administrator\Desktop\Selenium Grid Testing\msedgedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://172.31.128.129:4455/grid/register/ -browser "browserName=MicrosoftEdge, maxInstances=5"
+
+-----------------------Using Json------------------
+
+java -Dwebdriver.chrome.driver="C:\Users\Administrator\Desktop\Selenium Grid Testing\chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -nodeConfig nodeA.json
+
+java -Dwebdriver.edge.driver="C:\Users\Administrator\Desktop\Selenium Grid Testing\msedgedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -nodeConfig nodeB.json
